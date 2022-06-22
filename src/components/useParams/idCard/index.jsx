@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "../style";
-import {card } from "./mock-card";
 import {useParams}from 'react-router-dom';
 import { data } from "../mock-data";
 
@@ -10,7 +9,7 @@ const Card = () => {
   return (
     <Container>
       {data.filter(value=>{
-        return value.id ==id.replace(':','');
+        return value.id ===id.replace(':','');
       }).map((item) => {
         return (
           <Container.Block key={item.id}>
