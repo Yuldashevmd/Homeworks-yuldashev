@@ -9,7 +9,7 @@ const Card = () => {
   return (
     <Container>
       {data.filter(value=>{
-        return value.id ===id.replace(':','');
+        return value.id === id.replace(':','');
       }).map((item) => {
         return (
           <Container.Block key={item.id}>
