@@ -15,12 +15,13 @@ const Home = () => {
   };
   const onEdit =(id)=>{
    data.map(value=>{
-      if(value.id === id) setEdit(!edit)
+    return  value.id === id ? setEdit(!edit) :null
    }) 
   }
 
   return (
     <Container>
+      <h1>CRUD-TABLE</h1>
       <Table>
         <thead>
         <tr>
