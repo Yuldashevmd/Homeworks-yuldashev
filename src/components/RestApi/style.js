@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div `
-  width: 80%;
+  width: 90%;
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 20px;
-  justify-content: center;
+  justify-content: space-evenly;
   .add {
-    width: 50%;
+    width: 200px;
+    height: fit-content;
     background: #3185f3;
     color: #fff;
     text-transform: uppercase;
     border: 2px solid #3185f3;
-    margin: 20px 0;
+    padding: 5px 0;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s linear;
@@ -26,6 +26,7 @@ export const Container = styled.div `
 export const Block = styled.div `
   width: 400px;
   height: 250px;
+  margin: 0.5rem 0;
   background: gainsboro;
   display: flex;
   flex-direction: column;
@@ -113,6 +114,8 @@ export const ModalDiv = styled.div `
       }
       button {
         width: 80%;
+        margin: auto;
+        padding: 5px 0;
         background: lightgreen;
         color: #000;
         text-transform: uppercase;

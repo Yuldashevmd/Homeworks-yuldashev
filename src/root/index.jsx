@@ -7,6 +7,7 @@ import Params from "../components/useParams";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Card from "../components/useParams/idCard";
 import RestApi from "../components/RestApi";
+import Tailwind from "../components/tailwind";
 
 class Root extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class Root extends React.Component {
           <Route path="/table" element={<TableItem />} />
           <Route path="/params" element={<Params />} />
           <Route path="/params:id" element={<Card />} />
+          <Route path="/tailwind" element={<Tailwind />} />
         </Routes>
       </BrowserRouter>
     );

@@ -2,12 +2,11 @@ import React from "react";
 import "./table.css";
 import { Container, Table } from "reactstrap";
 
-
 class TableItem extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state ={
-      person:[
+    this.state = {
+      person: [
         {
           id: 1,
           name: "Sardorbek Muhtorov",
@@ -178,48 +177,52 @@ class TableItem extends React.Component {
           univ: "sejong",
           job: "developer",
         },
-      ]
-    }
+      ],
+    };
   }
   render() {
-    const onDelete =(id)=>{
-      this.setState({person:this.state.person.filter((value)=>{
-        return value.id !== id;
-      })})
-    }
+    const onDelete = (id) => {
+      this.setState({
+        person: this.state.person.filter((value) => {
+          return value.id !== id;
+        }),
+      });
+    };
     return (
       <div className="TableMain">
         <Container className="container">
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>AGE</th>
-              <th>ADDRESS</th>
-              <th>STATUS</th>
-              <th>UNIV</th>
-              <th>JOB</th>
-              <th>REMOVE</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.person.map((item) => {
-              return (
-                <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.age}</td>
-                  <td>{item.adress}</td>
-                  <td>{item.status}</td>
-                  <td>{item.univ}</td>
-                  <td>{item.job}</td>
-                  <button onClick={()=>onDelete(item.id)}>Delete</button>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
+          <Table responsive>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>ADDRESS</th>
+                <th>STATUS</th>
+                <th>UNIV</th>
+                <th>JOB</th>
+                <th>REMOVE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.person.map((item) => {
+                return (
+                  <tr key={item.id}>
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.age}</td>
+                    <td>{item.adress}</td>
+                    <td>{item.status}</td>
+                    <td>{item.univ}</td>
+                    <td>{item.job}</td>
+                    <button className="btn" onClick={() => onDelete(item.id)}>
+                      Delete
+                    </button>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
         </Container>
       </div>
     );

@@ -10,6 +10,7 @@ const Navbar = () => {
         <List to="/table">Table</List>
         <List to="/params">useParams</List>
         <List to="/restapi">Rest_Api</List>
+        <List to="/tailwind">Tailwind</List>
       </Container.Ul>
     </Container>
   );
