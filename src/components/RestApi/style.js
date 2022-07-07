@@ -56,6 +56,15 @@ export const Block = styled.div `
 export const ModalDiv = styled.div `
   display: ${(props) => (props.display ? "block" : "none")};
   text-align: center;
+  animation: show 0.3s backwards;
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   form {
     width: 500px;
     height: 400px;

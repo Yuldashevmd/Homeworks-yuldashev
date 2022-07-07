@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
-import { url } from "./index";
+import { ContextWrap } from "../Context";
+import { url } from "../Context";
 import { ModalDiv } from "./style";
 
 const Modal = ({ display }) => {
   const [value, setValue] = useState();
+  const [post, setPost] = useContext(ContextWrap);
 
   const getValue = (e) => {
     setValue(e.target.value);
   };
+
   const sendValue = (e) => {
     e.preventDefault();
 
     fetch(`${url}/posts`, {
       method: "POST",
-      body: JSON.stringify({ title: value }),
+      body: JSON.stringify({ id: post.length + 1, title: value }),
       headers: { "Content-type": "application/json" },
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => setPost([...post, res]));
   };
 
   return (
