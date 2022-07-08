@@ -4,9 +4,9 @@ import Modal from "./modal";
 import { AddBtn, Block, Container } from "./style";
 
 const RestApi = () => {
-  const [data, setData] = useContext(ContextWrap);
+  const [data] = useContext(ContextWrap);
   const [modal, setModal] = useState(false);
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState();
   const [inputVal, setInputVal] = useState();
 
   const openModal = () => {
@@ -21,21 +21,25 @@ const RestApi = () => {
   };
 
   const onUpdate = () => {
-    setEdit(!edit);
+    setEdit(true);
   };
   const onSave = (id) => {
-    setEdit(false);
-    fetch(`${url}/posts/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        title: inputVal,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => setData(data.filter((item) => item.id === id)));
+    if (!edit) {
+      setEdit(false);
+    } else {
+      fetch(`${url}/posts/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          title: inputVal,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => console.log(res));
+      setEdit(false);
+    }
   };
   const onChange = ({ target }) => {
     setInputVal({

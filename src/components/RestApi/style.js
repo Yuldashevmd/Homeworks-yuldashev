@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div `
   width: 90%;
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 `;
-export const Block = styled.div`
+export const Block = styled.div `
   width: 400px;
   height: 250px;
   margin: 0.5rem 0;
@@ -33,6 +33,9 @@ export const Block = styled.div`
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s linear;
+    :active {
+      transform: scale(0.95);
+    }
   }
   .edit {
     background: slategrey;
@@ -44,7 +47,7 @@ export const Block = styled.div`
     background: forestgreen;
   }
 `;
-export const ModalDiv = styled.div`
+export const ModalDiv = styled.div `
   display: ${(props) => (props.display ? "block" : "none")};
   text-align: center;
   animation: show 0.3s backwards;
@@ -116,7 +119,7 @@ export const ModalDiv = styled.div`
     }
   }
 `;
-export const AddBtn = styled.button`
+export const AddBtn = styled.button `
   width: 200px;
   margin: auto;
   display: flex;
