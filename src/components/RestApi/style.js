@@ -1,29 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
   width: 90%;
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  .add {
-    width: 200px;
-    height: fit-content;
-    background: #3185f3;
-    color: #fff;
-    text-transform: uppercase;
-    border: 2px solid #3185f3;
-    padding: 5px 0;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s linear;
-    :hover {
-      background: transparent;
-      color: #3185f3;
-    }
-  }
 `;
-export const Block = styled.div `
+export const Block = styled.div`
   width: 400px;
   height: 250px;
   margin: 0.5rem 0;
@@ -38,23 +22,29 @@ export const Block = styled.div `
     font-size: 24px;
     font-weight: bold;
   }
-
-  .delete {
-    width: 200px;
+  button {
+    width: 150px;
+    height: 40px;
     background: transparent;
-    color: #eb1e21;
-    border: 2px solid #eb1e21;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s linear;
-    :hover {
-      background: #eb1e21;
-      color: #fff;
-    }
+  }
+  .edit {
+    background: slategrey;
+  }
+  .delete {
+    background: firebrick;
+  }
+  .save {
+    background: forestgreen;
   }
 `;
-export const ModalDiv = styled.div `
+export const ModalDiv = styled.div`
   display: ${(props) => (props.display ? "block" : "none")};
   text-align: center;
   animation: show 0.3s backwards;
@@ -124,5 +114,24 @@ export const ModalDiv = styled.div `
         }
       }
     }
+  }
+`;
+export const AddBtn = styled.button`
+  width: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  background: #3185f3;
+  color: #fff;
+  text-transform: uppercase;
+  border: 2px solid #3185f3;
+  padding: 5px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  :hover {
+    background: transparent;
+    color: #3185f3;
   }
 `;
